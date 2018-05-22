@@ -79,34 +79,35 @@ The command removes all the Kubernetes components associated with the chart and 
 
 The following table lists has the main configurable parameters (polling, triggers, notifications, service) of the _Keel_ chart and they apply to both Kubernetes and Helm providers:
 
-| Parameter                         | Description                            | Default                                                   |
-| --------------------------------- | -------------------------------------- | --------------------------------------------------------- |
-| `polling.enabled`                 | Docker registries polling              | `true`                                                    |
-| `helmProvider.enabled`            | Enable/disable Helm provider           | `true`                                                   |
-| `gcr.enabled`                     | Enable/disable GCR Registry            | `false`                                                   |
-| `gcr.projectID`                   | GCP Project ID GCR belongs to          |                                                           |
-| `gcr.pubsub.enabled`              | Enable/disable GCP Pub/Sub trigger     | `false`                                                   |
-| `webhook.enabled`                 | Enable/disable Webhook Notification    | `false`                                                   |
-| `webhook.endpoint`                | Remote webhook endpoint                |                                                           |
-| `slack.enabled`                   | Enable/disable Slack Notification      | `false`                                                   |
-| `slack.token`                     | Slack token                            |                                                           |
-| `slack.channel`                   | Slack channel                          |                                                           |
-| `service.enable`                  | Enable/disable Keel service            | `false`                                                   |
-| `service.type`                    | Keel service type                      | `LoadBalancer`                                            |
-| `service.externalPort`            | Keel service port                      | `9300`                                                    |
-| `webhookRelay.enabled`            | Enable/disable WebhookRelay integration| `false`                                                   |
-| `webhookRelay.key`                | WebhookRelay key                       |                                                           |
-| `webhookRelay.secret`             | WebhookRelay secret                    |                                                           |
-| `webhookRelay.bucket`             | WebhookRelay bucket                    |                                                           |
-| `rbac.enabled`                    | Enable/disable RBAC installation       | `false`                                                   |
-| `hipchat.enabled`                 | Enable/disable hipchat integration     | `false`                                                   |
-| `hipchat.token`                   | Hipchat token                          |                                                           |
-| `hipchat.channel`                 | Hipchat channel                        |                                                           |
-| `hipchat.approvals_channel`       | Hipchat channel for approvals          |                                                           |
-| `hipchat.bot_name`                | Name of the Hipchat bot                |                                                           |
-| `hipchat.user_name`               | Hipchat username in Jabber format      |                                                           |
-| `hipchat.password`                | Hipchat password for approvals user    |                                                           |
-| `googleApplicationCredentials`    | GCP Service account key configurable   |                                                           |
+| Parameter                              | Description                            | Default                                                   |
+| -------------------------------------- | -------------------------------------- | --------------------------------------------------------- |
+| `polling.enabled`                      | Docker registries polling              | `true`                                                    |
+| `helmProvider.enabled`                 | Enable/disable Helm provider           | `true`                                                    |
+| `gcr.enabled`                          | Enable/disable GCR Registry            | `false`                                                   |
+| `gcr.projectID`                        | GCP Project ID GCR belongs to          |                                                           |
+| `gcr.pubsub.enabled`                   | Enable/disable GCP Pub/Sub trigger     | `false`                                                   |
+| `webhook.enabled`                      | Enable/disable Webhook Notification    | `false`                                                   |
+| `webhook.endpoint`                     | Remote webhook endpoint                |                                                           |
+| `slack.enabled`                        | Enable/disable Slack Notification      | `false`                                                   |
+| `slack.token`                          | Slack token                            |                                                           |
+| `slack.channel`                        | Slack channel                          |                                                           |
+| `service.enable`                       | Enable/disable Keel service            | `false`                                                   |
+| `service.type`                         | Keel service type                      | `LoadBalancer`                                            |
+| `service.externalPort`                 | Keel service port                      | `9300`                                                    |
+| `webhookRelay.enabled`                 | Enable/disable WebhookRelay integration| `false`                                                   |
+| `webhookRelay.key`                     | WebhookRelay key                       |                                                           |
+| `webhookRelay.secret`                  | WebhookRelay secret                    |                                                           |
+| `webhookRelay.bucket`                  | WebhookRelay bucket                    |                                                           |
+| `rbac.enabled`                         | Enable/disable RBAC installation       | `false`                                                   |
+| `hipchat.enabled`                      | Enable/disable hipchat integration     | `false`                                                   |
+| `hipchat.token`                        | Hipchat token                          |                                                           |
+| `hipchat.channel`                      | Hipchat channel                        |                                                           |
+| `hipchat.approvals_channel`            | Hipchat channel for approvals          |                                                           |
+| `hipchat.bot_name`                     | Name of the Hipchat bot                |                                                           |
+| `hipchat.user_name`                    | Hipchat username in Jabber format      |                                                           |
+| `hipchat.password`                     | Hipchat password for approvals user    |                                                           |
+| `googleApplicationCredentials.enabled` | Enable/disable GCP Service account key |                                                           |
+| `googleApplicationCredentials.data`    | GCP Service account key configurable   |                                                           |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 

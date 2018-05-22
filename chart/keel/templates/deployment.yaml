@@ -26,14 +26,14 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["/bin/keel"]
-{{- if .Values.googleApplicationCredentials }}
+{{- if .Values.googleApplicationCredentials.enabled }}
           volumeMounts:
             - name: google
               mountPath: "/google"
               readOnly: true
 {{- end }}
           env:
-{{- if .Values.googleApplicationCredentials }}
+{{- if .Values.googleApplicationCredentials.enabled }}
             - name: GOOGLE_APPLICATION_CREDENTIALS
               value: /google/google-application-credentials.json
 {{- end }}
@@ -148,7 +148,7 @@ spec:
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
-{{- if .Values.googleApplicationCredentials }}
+{{- if .Values.googleApplicationCredentials.enabled }}
       volumes:
         - name: google
           secret:
